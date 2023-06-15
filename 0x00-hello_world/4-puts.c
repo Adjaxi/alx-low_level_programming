@@ -1,12 +1,12 @@
  #!/bin/bash
 #include <stdio.h>
 /**
- * Description: main - Prints out a string to stdout
+ * main - Entry point
  *
- * Return: Always 0 (Success)
+ * return: Always 0 (Success)
  */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle\n");
-		return (0);
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }
