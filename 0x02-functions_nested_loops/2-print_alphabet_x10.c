@@ -1,16 +1,19 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * main - Entry point
- * Return: always 0
- */
-int _abs(int c)
+  * print_alphabet_x10 - repeats the print_alphabet 10 times.
+  * Return: Nothing.
+  */
+void print_alphabet_x10(void)
 {
-	if (c < 0)
-	{
-	int abs_val;
+	int i;
+	char c;
 
-	abs_val = c * -1;
-	return (abs_val);
+	for (i = 0; i < 10; ++i)
+	{
+		for (c = 'a'; c <= 'z'; c++)
+		{
+			_putchar(c);
+		}
+		_putchar('\n');
 	}
-	return (c);
 }
