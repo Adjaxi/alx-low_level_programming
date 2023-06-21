@@ -1,50 +1,46 @@
 #include "main.h"
-#include "stdio.h"
-/**
- * print_times_table - check the code.
- * @x: Description of parameter x
- * Description
- * Return: Always 0.
- */
-void print_times_table(int x)
-{
-	int i, j, n;
 
-	for (i = 0; i <= x && (x < 15 && x >= 0); i++)
-	{
-		for (j = 0; j <= x; j++)
-		{
-			n = i * j;
-			if (n > 9)
-			{
-				if (n > 99)
-				{
-					_putchar((n / 100) + '0');
-				}
-				_putchar((n / 10) % 10 + '0');
-				_putchar(n % 10 + '0');
-			}
-			else
-			{
-				if (j != 0)
-				{
-					_putchar(' ');
-				}
-				_putchar(n + '0');
-			}
-			if (j < x)
-			{
-				_putchar(',');
-				if (n / 100 == 0  || n >= 99)
-				{
-					_putchar(' ');
-					if ((i * (j + 1)) / 100 == 0)
-					{
-						_putchar(' ');
-					}
-				}
-			}
-		}
-		_putchar('\n');
-	}
+/**
+* print_times_table - Prints the n times table
+*
+* @n: number times table
+*
+* Return: void
+*/
+void print_times_table(int n)
+{
+int a, b, oper;
+
+if (n >= 0 && n <= 15)
+{
+for (a = 0; a <= n; a++)
+{
+_putchar(48);
+for (b = 1; b <= n; b++)
+{
+oper = a * b;
+_putchar(44);
+_putchar(32);
+if (oper <= 9)
+{
+_putchar(32);
+_putchar(32);
+_putchar(oper + 48);
+}
+else if (oper <= 99)
+{
+_putchar(32);
+_putchar((oper / 10) + 48);
+_putchar((oper % 10) + 48);
+}
+else
+{
+_putchar(((oper / 100) % 10) + 48);
+_putchar(((oper / 10) % 10) + 48);
+_putchar((oper % 10) + 48);
+}
+}
+_putchar('\n');
+}
+}
 }
