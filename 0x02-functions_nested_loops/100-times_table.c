@@ -41,4 +41,4 @@ void print_times_taable(int n)
 			_putchar('\n');
 		}
 	}
-}				        	
+}
