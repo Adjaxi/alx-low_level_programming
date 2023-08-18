@@ -1,18 +1,24 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_most_numbers - print num except 2 and 4
- *
- * return: void
+ * main - print fizz buzz
+ * Return: Always 0
  */
+int main(void)
+{
+	int n;
 
-void print_most_numbers(void)
-{
-char c;
-for (c = '0'; c <= '9'; c++)
-{
-if (!(c == '2' || c == '4'))
-_putchar(c);
-}
-_putchar('\n');
+	printf("1");
+	for (n = 2; n <= 100; n++)
+	{
+		printf(" ");
+		if (n % 3 == 0)
+			printf("Fizz");
+		if (n % 5 == 0)
+			printf("Buzz");
+		if (n % 3 != 0 && n % 5 != 0)
+			printf("%d", n);
+	}
+	printf("\n");
+	return (0);
 }
