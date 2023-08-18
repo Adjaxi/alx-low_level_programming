@@ -1,24 +1,23 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - print fizz buzz
+ * more_numbers - prints 0 to 14 ten times
  * Return: Always 0
  */
-int main(void)
+void more_numbers(void)
 {
-	int n;
+	int num, a;
 
-	printf("1");
-	for (n = 2; n <= 100; n++)
+	for (a = 0; a <= 9; a++)
 	{
-		printf(" ");
-		if (n % 3 == 0)
-			printf("Fizz");
-		if (n % 5 == 0)
-			printf("Buzz");
-		if (n % 3 != 0 && n % 5 != 0)
-			printf("%d", n);
+		for (num = 0; num <= 14; num++)
+		{
+			if (num > 9)
+			{
+				_putchar((num / 10) + '0');
+			}
+			_putchar((num % 10) + '0');
+		}
+		_putchar('\n');
 	}
-	printf("\n");
-	return (0);
 }
