@@ -1,82 +1,45 @@
 #include "main.h"
 
 /**
- * print_times_table - This function prints n times table, starting with 0.
- * @n: The number of column and row
- */
+* print_times_table - Prints the n times table
+*
+* @n: number times table
+*
+* Return: void
+*/
 void print_times_table(int n)
 {
-	int i = 0;
-	int j, product;
+int a, b, oper;
 
-	if (n >= 0 && n <= 15)
-	{
-		while (i <= n)
-		{
-			j = 0;
-			while (j <= n)
-			{
-				product = i * j;
-				if (product == 0)
-				{
-					if (j != 0)
-						printSpace(3);
-					_putchar('0');
-				}
-				else if (product < 10)
-					printInt(product);
-				else if (product >= 10 && product < 100)
-					printInt(product);
-				else
-					printInt(product);
-
-				if (j + 1  <= n)
-					_putchar(',');
-				j++;
-			}
-			_putchar('\n');
-			i++;
-		}
-	}
-}
-
-/**
- * printSpace - print n number of spaces
- * @n: The number of spaces to be printed
- */
-void printSpace(int n)
+if (n >= 0 && n <= 15)
 {
-	int i = 0;
-
-	while (i < n)
-	{
-		_putchar(' ');
-		i++;
-	}
-}
-
-/**
- * printInt - print the given int to stdout
- * @n: the integer to be printed
- */
-void printInt(int n)
+for (a = 0; a <= n; a++)
 {
-	if (n < 10)
-	{
-		printSpace(3);
-		_putchar(n + '0');
-	}
-	else if (n >= 10 && n < 100)
-	{
-		printSpace(2);
-		_putchar(((n / 10) % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
-	else
-	{
-		printSpace(1);
-		_putchar(((n / 100) % 10) + '0');
-		_putchar(((n / 10) % 10) + '0');
-		_putchar((n % 10) + '0');
-	}
+_putchar(48);
+for (b = 1; b <= n; b++)
+{
+oper = a * b;
+_putchar(44);
+_putchar(32);
+if (oper <= 9)
+{
+_putchar(32);
+_putchar(32);
+_putchar(oper + 48);
+}
+else if (oper <= 99)
+{
+_putchar(32);
+_putchar((oper / 10) + 48);
+_putchar((oper % 10) + 48);
+}
+else
+{
+_putchar(((oper / 100) % 10) + 48);
+_putchar(((oper / 10) % 10) + 48);
+_putchar((oper % 10) + 48);
+}
+}
+_putchar('\n');
+}
 }
